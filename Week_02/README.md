@@ -102,7 +102,7 @@ final Entry<K,V> getEntry(Object key) {
 1. 两个对象的hashcode相同，会发生什么？
 hashcode相同，说明两个对象HashMap数组的同一位置上，遍历链表中的每个元素，通过key的equals方法来判断是否为同一个key。如果是同一个key，则新的value会覆盖旧的value，并且返回旧的value（修改）。如果不是同一个key，则存储在该位置上的链表的链头（添加）。
 2. 如果两个键的hashcode相同，如何取值？
-遍历HashMap链表中的每个元素，并对每个key进行hash计算，最后##通过get方法获取其对应的值对象。
+遍历HashMap链表中的每个元素，并对每个key进行hash计算，最后通过get方法获取其对应的值对象。
 
 本文参考：简书https://www.jianshu.com/p/4aa3bb16f36c；作者：gogoingmonkey
 
