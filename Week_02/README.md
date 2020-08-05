@@ -161,3 +161,45 @@ Max-Heapify(A, 1){
         Max-Heapify(A, largest)
 }
 </code></pre>
+
+---
+# 树、二叉树和二叉搜索树
+## 树的定义
+```
+    class TreeNode:
+        def __init__(self, val):
+            self.val = val
+            self.left, self.right = None, None
+```
+## 二叉树遍历(都是深度优先)
+1. 前序遍历(Pre-order):根-左-右
+```
+        def Pre_order(self, root):
+            if root:
+                self.traverse_path.append(root.val)
+                self.Pre_order(root.left)
+                self.Pre_order(root.right)
+```
+2. 中序遍历(In-order):左-根-右
+```
+        def In_order(self, root):
+            if root:
+                self.In_order(root.left)
+                self.traverse_path.append(root.val)
+                self.In_order(root.right)
+```
+3. 后序遍历(Post-order):左-右-根
+```
+        def Post_order(self, root):
+            if root:
+                self.Post_order(root.left)
+                self.Post_order(root.right)
+                self.traverse_path.append(root.val)
+```
+## 二叉搜索树
+### 定义
+一棵空树/二叉树具有如下性质：
+1. 左子树上所有结点值均小于根结点的值；
+2. 右子树上所有结点值均大于根结点的值；
+3. 左右子树都是二叉搜索树
+注：中序遍历二叉搜索树是升序的。
